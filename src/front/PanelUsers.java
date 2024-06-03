@@ -26,6 +26,7 @@ public class PanelUsers extends JPanel {
 
     public void armarPanelUsers(){
         UsuarioService userService = new UsuarioService();
+        this.removeAll();
 
         this.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();

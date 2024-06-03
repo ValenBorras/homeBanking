@@ -29,10 +29,14 @@ public class PortalUsuario extends JPanel{
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.insets = new Insets(5, 5, 5, 5);
 
-        label = new JLabel(user.getNombre());
-        constraints.gridx = 0;
+        label = new JLabel("<html><b> Portal de " + user.getNombre() + "</b></html>");
+        constraints.gridx = 1;
         constraints.gridy = 0;
         add(label);
+
+        label = new JLabel("Cuentas:");
+        constraints.gridx = 0;
+        constraints.gridy = 1;
 
         //Boton volver
         JButton backButton = new JButton("Volver");
@@ -47,6 +51,22 @@ public class PortalUsuario extends JPanel{
             }
         });
 
+        JButton deleteButton = new JButton("Eliminar usuario");
+        constraints.gridx = 2;
+        constraints.gridy = 4;
+        add(deleteButton, constraints);
+
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    userService.delete(user.getIdUsuario());
+                    panelManager.mostrarPanelUsers();
+                }catch(ServiceException er){
+                    er.printStackTrace();
+                }
+            }
+        });
 
     }
 

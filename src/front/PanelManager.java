@@ -13,7 +13,7 @@ public class PanelManager {
     private PanelUsers panelUsers;
     private PanelCrearUsuario panelCrearUsuario;
     private PortalUsuario portalUsuario;
-    //private List<Usuario> usuarios;
+    private List<Usuario> usuarios;
 
     public PanelManager(){}
 
@@ -23,7 +23,6 @@ public class PanelManager {
         frame.setBounds(100,100,500,500);
 
         panelUsers = new PanelUsers(this);
-        panelUsers.armarPanelUsers();
 
         panelCrearUsuario = new PanelCrearUsuario(this);
         panelCrearUsuario.armarPanelCrearUsuario();
@@ -42,6 +41,7 @@ public class PanelManager {
         }
     }
     public void mostrarPanelUsers(){
+        panelUsers.armarPanelUsers();
         frame.getContentPane().removeAll();
         frame.getContentPane().add(panelUsers);
         frame.getContentPane().validate();

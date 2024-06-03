@@ -99,8 +99,7 @@ public class UsuarioDAO implements IUsuarioDAO{
 
         try {
             Class.forName("org.h2.Driver");
-            Connection con2 = null;
-            con2 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
+            Connection con2 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement2 = con2.createStatement();
             ResultSet resultSet = statement2.executeQuery("SELECT * FROM USUARIO");
             int id = 0;
