@@ -4,25 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="start">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/h2_2_2_224.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/h2-2.2.224.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/DAOException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/IUsuarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/UsuarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/UsuarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/homeBanking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PortalUsuario.java" afterDir="false" />
+    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="crear usuarios desde el jframe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homeBanking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/homeBanking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PortalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PortalUsuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717077881085</updated>
       <workItem from="1717077882469" duration="28372000" />
-      <workItem from="1717420034936" duration="2107000" />
+      <workItem from="1717420034936" duration="10034000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -98,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717078183302</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="crear usuarios desde el jframe">
+      <option name="closed" value="true" />
+      <created>1717422219275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717422219275</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +100,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
-    <option name="LAST_COMMIT_MESSAGE" value="start" />
+    <MESSAGE value="crear usuarios desde el jframe" />
+    <option name="LAST_COMMIT_MESSAGE" value="crear usuarios desde el jframe" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

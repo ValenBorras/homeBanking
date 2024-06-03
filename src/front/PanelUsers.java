@@ -16,7 +16,13 @@ public class PanelUsers extends JPanel {
     private JButton boton;
     private JLabel label;
     private List<Usuario> users = new ArrayList<>();
+
     public PanelUsers(PanelManager m){this.panelManager = m;}
+
+
+    public PanelManager getPanelManager() {
+        return panelManager;
+    }
 
     public void armarPanelUsers(){
         UsuarioService userService = new UsuarioService();
@@ -44,14 +50,17 @@ public class PanelUsers extends JPanel {
             boton = new JButton(user.getNombre());
             constraints.gridx = 0;
             constraints.gridy++;
-
             add(boton, constraints);
+
             boton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    panelManager.mostrarPortalUsuario();
+                    int id = user.getIdUsuario();
+                    panelManager.mostrarPortalUsuario(id);
                 }
+
             });
+
         }
 
 
@@ -67,6 +76,7 @@ public class PanelUsers extends JPanel {
                 panelManager.mostrarPanelCrearUsuario();
             }
         });
+
     }
 
 }

@@ -4,15 +4,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import com.dh.poo.Usuario;
+import java.util.List;
+
 public class PanelManager {
     private JFrame frame;
     private PanelUsers panelUsers;
     private PanelCrearUsuario panelCrearUsuario;
     private PortalUsuario portalUsuario;
+    //private List<Usuario> usuarios;
 
     public PanelManager(){}
 
     public void armarManager(){
+
         frame = new JFrame();
         frame.setBounds(100,100,500,500);
 
@@ -23,7 +29,6 @@ public class PanelManager {
         panelCrearUsuario.armarPanelCrearUsuario();
 
         portalUsuario = new PortalUsuario(this);
-        portalUsuario.armarPortalUsuario();
 
     }
     public void showFrame() {
@@ -50,12 +55,12 @@ public class PanelManager {
         frame.getContentPane().repaint();
     }
 
-    public void mostrarPortalUsuario(){
+    public void mostrarPortalUsuario(int id){
+        portalUsuario.armarPortalUsuario(id);
         frame.getContentPane().removeAll();
         frame.getContentPane().add(portalUsuario);
         frame.getContentPane().validate();
         frame.getContentPane().repaint();
-        portalUsuario.updateUI();
     }
 
     public JFrame getFrame() {
