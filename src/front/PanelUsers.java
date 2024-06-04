@@ -1,8 +1,8 @@
 package front;
 
 import com.dh.poo.ServiceException;
-import com.dh.poo.Usuario;
-import com.dh.poo.UsuarioService;
+import com.dh.poo.User_src.Usuario;
+import com.dh.poo.User_src.UsuarioService;
 
 import javax.swing.*;
 import java.awt.*;

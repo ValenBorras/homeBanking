@@ -1,4 +1,7 @@
-package com.dh.poo;
+package com.dh.poo.User_src;
+import com.dh.poo.DAOException;
+import com.dh.poo.User_src.Usuario;
+
 import java.util.List;
 
 public interface IUsuarioDAO {

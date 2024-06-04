@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="funciona el pasar el id entre paneles">
+    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="arregle lo de los usuarios que no se actualizaban, y funciona el delete">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/Cuenta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/ICuentaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelCrearCuenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/IUsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/IUsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/homeBanking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PanelUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PortalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PortalUsuario.java" afterDir="false" />
@@ -26,6 +38,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -57,6 +70,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dh.poo" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -106,6 +122,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />

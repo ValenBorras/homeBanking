@@ -1,57 +1,60 @@
 package front;
 
+import com.dh.poo.Cuenta_src.Cuenta;
+import com.dh.poo.Cuenta_src.CuentaService;
 import com.dh.poo.ServiceException;
-import com.dh.poo.User_src.Usuario;
-import com.dh.poo.User_src.UsuarioService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PanelCrearUsuario extends JPanel{
+public class PanelCrearCuenta extends JPanel{
     private PanelManager panelManager;
-    public PanelCrearUsuario(PanelManager m){this.panelManager = m;}
+    public PanelCrearCuenta(PanelManager m){this.panelManager = m;}
 
-    public void armarPanelCrearUsuario(){
-        UsuarioService userService = new UsuarioService();
+    public void armarPanelCrearCuenta(int id){
+        CuentaService cuentaService = new CuentaService();
+        this.removeAll();
 
         this.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.insets = new Insets(5, 5, 5, 5);
 
-        //Field nombre
-        JLabel nameLabel = new JLabel("Nombre:");
+        //Field cbu
+        JLabel cbuLabel = new JLabel("CBU:");
         constraints.gridx = 0;
         constraints.gridy = 0;
-        add(nameLabel, constraints);
+        add(cbuLabel, constraints);
 
-        JTextField nameField = new JTextField(20);
+        JTextField cbuField = new JTextField(22);
         constraints.gridx = 1;
         constraints.gridy = 0;
-        add(nameField, constraints);
+        add(cbuField, constraints);
 
-        //Field email
-        JLabel emailLabel = new JLabel("Email:");
+        //Field alias
+        JLabel aliasLabel = new JLabel("Alias:");
         constraints.gridx = 0;
         constraints.gridy = 1 ;
-        add(emailLabel, constraints);
+        add(aliasLabel, constraints);
 
-        JTextField emailField = new JTextField(20);
+        JTextField aliasField = new JTextField(15);
         constraints.gridx = 1;
         constraints.gridy = 1;
-        add(emailField, constraints);
+        add(aliasField, constraints);
 
-        //Password field
-        JLabel passwordLabel = new JLabel("Password:");
+        //Tipo de cuenta
+        JLabel tipoLabel = new JLabel("Tipo:");
         constraints.gridx = 0;
-        constraints.gridy = 2;
-        add(passwordLabel, constraints);
+        constraints.gridy = 2 ;
+        add(tipoLabel, constraints);
 
-        JTextField passwordField = new JTextField(20);
+        String[] tipos = { "Cuenta Corriente", "Caja de Ahorro", "Caja de Ahorro en USD"};
+        JComboBox<String> box = new JComboBox<>(tipos);
         constraints.gridx = 1;
         constraints.gridy = 2;
-        add(passwordField, constraints);
+        add(box, constraints);
+
 
         //Boton volver
         JButton backButton = new JButton("Volver");
@@ -78,28 +81,29 @@ public class PanelCrearUsuario extends JPanel{
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name = nameField.getText();
-                String email = emailField.getText();
-                String password = passwordField.getText();
+                String cbu = cbuField.getText();
+                String alias = aliasField.getText();
+                String tipo = box.getItemAt(box.getSelectedIndex());
 
-                if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                if (cbu.isEmpty() || alias.isEmpty() || tipo.isEmpty()) {
                     JOptionPane.showMessageDialog(panelManager.getFrame(), "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
 
-                    Usuario user = new Usuario();
-                    user.setNombre(name);
-                    user.setEmail(email);
-                    user.setPassword(password);
+                    Cuenta cuenta = new Cuenta();
+                    cuenta.setIdUsuario(id);
+                    cuenta.setCbu(cbu);
+                    cuenta.setAlias(alias);
+                    cuenta.setTipo(tipo);
 
                     try{
-                        userService.create(user);
+                        cuentaService.create(cuenta);
                     }catch(ServiceException er){
                         er.printStackTrace();
                     }
 
-                    nameField.setText("");
-                    emailField.setText("");
-                    passwordField.setText("");
+                    cbuField.setText("");
+                    aliasField.setText("");
+                    box.setSelectedIndex(0);
 
                     panelManager.mostrarPanelUsers();
                 }

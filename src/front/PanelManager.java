@@ -1,11 +1,8 @@
 package front;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import com.dh.poo.Usuario;
+
+import com.dh.poo.User_src.Usuario;
 import java.util.List;
 
 public class PanelManager {
@@ -13,7 +10,7 @@ public class PanelManager {
     private PanelUsers panelUsers;
     private PanelCrearUsuario panelCrearUsuario;
     private PortalUsuario portalUsuario;
-    private List<Usuario> usuarios;
+    private PanelCrearCuenta panelCrearCuenta;
 
     public PanelManager(){}
 
@@ -28,6 +25,8 @@ public class PanelManager {
         panelCrearUsuario.armarPanelCrearUsuario();
 
         portalUsuario = new PortalUsuario(this);
+
+        panelCrearCuenta = new PanelCrearCuenta(this);
 
     }
     public void showFrame() {
@@ -59,6 +58,14 @@ public class PanelManager {
         portalUsuario.armarPortalUsuario(id);
         frame.getContentPane().removeAll();
         frame.getContentPane().add(portalUsuario);
+        frame.getContentPane().validate();
+        frame.getContentPane().repaint();
+    }
+
+    public void mostrarPanelCrearCuenta(int id){
+        panelCrearCuenta.armarPanelCrearCuenta(id);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelCrearCuenta);
         frame.getContentPane().validate();
         frame.getContentPane().repaint();
     }
