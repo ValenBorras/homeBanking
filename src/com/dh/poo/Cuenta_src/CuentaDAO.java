@@ -52,7 +52,7 @@ public class CuentaDAO implements ICuentaDAO {
             Class.forName("org.h2.Driver");
             Connection con3 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement3 = con3.createStatement();
-            int cantRegistros2 = statement3.executeUpdate("UPDATE CUENTA SET CBU = '" + cuenta.getCbu() + "', ALIAS = '" + cuenta.getAlias() + "', BALANCE = '" + cuenta.getBalance() + "' WHERE ID=" + cuenta.getIdCuenta());
+            int cantRegistros2 = statement3.executeUpdate("UPDATE CUENTA SET CBU = '" + cuenta.getCbu() + "',TIPO = '" + cuenta.getTipo() + "', ALIAS = '" + cuenta.getAlias() + "', BALANCE = '" + cuenta.getBalance() + "' WHERE IDCUENTA=" + cuenta.getIdCuenta());
             if(cantRegistros2 > 0)
                 System.out.println("Se modificó la cuenta");
 

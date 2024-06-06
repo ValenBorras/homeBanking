@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="arregle lo de los usuarios que no se actualizaban, y funciona el delete">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/Cuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/ICuentaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelCrearCuenta.java" afterDir="false" />
+    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta">
+      <change afterPath="$PROJECT_DIR$/src/front/PanelUpdateCuenta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelUpdateUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/IUsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/IUsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/homeBanking.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/User_src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/front/PanelUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PortalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PortalUsuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +83,9 @@
       <updated>1717077881085</updated>
       <workItem from="1717077882469" duration="28372000" />
       <workItem from="1717420034936" duration="13929000" />
+      <workItem from="1717500559326" duration="1285000" />
+      <workItem from="1717617096954" duration="1565000" />
+      <workItem from="1717634648767" duration="7278000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -117,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717432381100</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta">
+      <option name="closed" value="true" />
+      <created>1717496456886</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717496456886</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +140,8 @@
     <MESSAGE value="start" />
     <MESSAGE value="crear usuarios desde el jframe" />
     <MESSAGE value="funciona el pasar el id entre paneles" />
-    <option name="LAST_COMMIT_MESSAGE" value="funciona el pasar el id entre paneles" />
+    <MESSAGE value="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
