@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta">
-      <change afterPath="$PROJECT_DIR$/src/front/PanelUpdateCuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelUpdateUsuario.java" afterDir="false" />
+    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="CRUD USUARIOS Y CUENTAS COMPLETO Y FUNCIONAL">
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Transferencia_src/Transferencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dh/poo/User_src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PortalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PortalUsuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -85,7 +88,12 @@
       <workItem from="1717420034936" duration="13929000" />
       <workItem from="1717500559326" duration="1285000" />
       <workItem from="1717617096954" duration="1565000" />
-      <workItem from="1717634648767" duration="7278000" />
+      <workItem from="1717634648767" duration="10242000" />
+      <workItem from="1718020169341" duration="599000" />
+      <workItem from="1719031553253" duration="594000" />
+      <workItem from="1719538849686" duration="1540000" />
+      <workItem from="1720283747502" duration="8925000" />
+      <workItem from="1720456950753" duration="927000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -119,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717496456886</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="CRUD USUARIOS Y CUENTAS COMPLETO Y FUNCIONAL">
+      <option name="closed" value="true" />
+      <created>1717641968169</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717641968169</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +157,8 @@
     <MESSAGE value="crear usuarios desde el jframe" />
     <MESSAGE value="funciona el pasar el id entre paneles" />
     <MESSAGE value="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta" />
-    <option name="LAST_COMMIT_MESSAGE" value="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta" />
+    <MESSAGE value="CRUD USUARIOS Y CUENTAS COMPLETO Y FUNCIONAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD USUARIOS Y CUENTAS COMPLETO Y FUNCIONAL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

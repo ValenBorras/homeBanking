@@ -82,6 +82,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                 usuario.setNombre(resultSet2.getString("NOMBRE"));
                 usuario.setEmail(resultSet2.getString("EMAIL"));
                 usuario.setPassword(resultSet2.getString("PASSWORD"));
+                usuario.setAdmin(resultSet2.getBoolean("ADMIN"));
             }
             con5.close();
 
@@ -108,6 +109,7 @@ public class UsuarioDAO implements IUsuarioDAO {
             String nombre = "";
             String email = "";
             String password = "";
+            Boolean admin = false;
 
             while(resultSet.next())
             {
@@ -116,6 +118,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                 usuario.setNombre(resultSet.getString("NOMBRE"));
                 usuario.setEmail(resultSet.getString("EMAIL"));
                 usuario.setPassword(resultSet.getString("PASSWORD"));
+                usuario.setAdmin(resultSet.getBoolean("ADMIN"));
 
                 personas.add(usuario);
             }

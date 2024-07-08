@@ -39,10 +39,15 @@ public class PanelUsers extends JPanel {
             e.printStackTrace();
         }
 
+        label = new JLabel("Elegir Usuario");
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        add(label, constraints);
+
         if (users.isEmpty()){
             label = new JLabel("No hay usuarios registrados");
             constraints.gridx = 0;
-            constraints.gridy = 0;
+            constraints.gridy = 1;
 
             add(label, constraints);
         }
@@ -57,26 +62,16 @@ public class PanelUsers extends JPanel {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     int id = user.getIdUsuario();
-                    panelManager.mostrarPortalUsuario(id);
+                    if(user.isAdmin()){
+                        panelManager.mostrarPanelAdmin();
+                    }else{
+                        panelManager.mostrarPortalUsuario(id,false);
+                    }
                 }
 
             });
 
         }
-
-
-        boton = new JButton("Crear usuario");
-        constraints.gridx = 0;
-        constraints.gridy++;
-
-        add(boton, constraints);
-
-        boton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                panelManager.mostrarPanelCrearUsuario();
-            }
-        });
 
     }
 

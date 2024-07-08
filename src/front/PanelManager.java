@@ -14,6 +14,7 @@ public class PanelManager {
     private PanelCrearCuenta panelCrearCuenta;
     private PanelUpdateCuenta panelUpdateCuenta;
     private PanelUpdateUsuario panelUpdateUsuario;
+    private PanelAdmin panelAdmin;
 
     public PanelManager(){}
 
@@ -31,6 +32,7 @@ public class PanelManager {
         panelCrearCuenta = new PanelCrearCuenta(this);
         panelUpdateCuenta = new PanelUpdateCuenta(this);
         panelUpdateUsuario = new PanelUpdateUsuario(this);
+        panelAdmin = new PanelAdmin(this);
 
     }
     public void showFrame() {
@@ -69,8 +71,8 @@ public class PanelManager {
         frame.getContentPane().repaint();
     }
 
-    public void mostrarPortalUsuario(int id){
-        portalUsuario.armarPortalUsuario(id);
+    public void mostrarPortalUsuario(int id, boolean admin){
+        portalUsuario.armarPortalUsuario(id,admin);
         frame.getContentPane().removeAll();
         frame.getContentPane().add(portalUsuario);
         frame.getContentPane().validate();
@@ -96,6 +98,14 @@ public class PanelManager {
         frame.getContentPane().repaint();
     }
 
+    public void mostrarPanelAdmin(){
+        panelAdmin.armarPanelAdmin();
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelAdmin);
+        frame.getContentPane().validate();
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
 
     public JFrame getFrame() {
         return frame;

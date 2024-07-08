@@ -21,7 +21,7 @@ public class PortalUsuario extends JPanel{
     private List<Cuenta> cuentas;
     public PortalUsuario(PanelManager m){this.panelManager = m;}
 
-    public void armarPortalUsuario(int id){
+    public void armarPortalUsuario(int id, boolean admin){
         UsuarioService userService = new UsuarioService();
         CuentaService cuentaService = new CuentaService();
         this.removeAll();
@@ -47,6 +47,7 @@ public class PortalUsuario extends JPanel{
         constraints.gridx = 0;
         constraints.gridy = 0;
         add(label, constraints);
+
 
         label = new JLabel("Cuentas:");
         constraints.gridx = 0;
@@ -97,40 +98,44 @@ public class PortalUsuario extends JPanel{
             constraints.gridx = 1;
             add(label,constraints);
 
-            //Eliminar Cuenta
-            button = new JButton("Eliminar Cuenta");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(button, constraints);
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    try{
-                        cuentaService.delete(cuenta.getIdCuenta());
+            if(admin){
+                //Eliminar Cuenta
+                button = new JButton("Eliminar Cuenta");
+                constraints.gridx = 0;
+                constraints.gridy++;
+                add(button, constraints);
+                button.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try{
+                            cuentaService.delete(cuenta.getIdCuenta());
 
-                    }catch(ServiceException er){
-                        er.printStackTrace();
+                        }catch(ServiceException er){
+                            er.printStackTrace();
+                        }
+                        panelManager.mostrarPanelUsers();
                     }
-                    panelManager.mostrarPanelUsers();
-                }
-            });
-            //Editar Cuenta
-            button = new JButton("Editar Cuenta");
-            constraints.gridx = 1;
-            add(button, constraints);
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    panelManager.mostrarPanelUpdateCuenta(cuenta);
-                }
+                });
+                //Editar Cuenta
+                button = new JButton("Editar Cuenta");
+                constraints.gridx = 1;
+                add(button, constraints);
+                button.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        panelManager.mostrarPanelUpdateCuenta(cuenta);
+                    }
 
-            });
+                });
 
+            }
             label = new JLabel("------------");
             constraints.gridx = 0;
             constraints.gridy++;
             add(label,constraints);
         }
+
+
 
         //Boton volver
         JButton backButton = new JButton("Volver");
@@ -145,44 +150,46 @@ public class PortalUsuario extends JPanel{
             }
         });
 
-        //Boton crearCuenta
-        JButton botonCrearCuenta = new JButton("Crear Cuenta");
-        constraints.gridx = 1;
-        add(botonCrearCuenta, constraints);
+        if(admin){
+            //Boton crearCuenta
+            JButton botonCrearCuenta = new JButton("Crear Cuenta");
+            constraints.gridx = 1;
+            add(botonCrearCuenta, constraints);
 
-        botonCrearCuenta.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                panelManager.mostrarPanelCrearCuenta(user.getIdUsuario());
-            }
-        });
-
-        JButton deleteButton = new JButton("Eliminar usuario");
-        constraints.gridx = 0;
-        constraints.gridy++;
-        add(deleteButton, constraints);
-
-        deleteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    userService.delete(user.getIdUsuario());
-                    panelManager.mostrarPanelUsers();
-                }catch(ServiceException er){
-                    er.printStackTrace();
+            botonCrearCuenta.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    panelManager.mostrarPanelCrearCuenta(user.getIdUsuario());
                 }
-            }
-        });
+            });
 
-        JButton updateButton = new JButton("Editar Usuario");
-        constraints.gridx = 1;
-        add(updateButton, constraints);
-        updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                panelManager.mostrarPanelUpdateUsuario(user);
-            }
-        });
+            JButton deleteButton = new JButton("Eliminar usuario");
+            constraints.gridx = 0;
+            constraints.gridy++;
+            add(deleteButton, constraints);
+
+            deleteButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    try{
+                        userService.delete(user.getIdUsuario());
+                        panelManager.mostrarPanelUsers();
+                    }catch(ServiceException er){
+                        er.printStackTrace();
+                    }
+                }
+            });
+
+            JButton updateButton = new JButton("Editar Usuario");
+            constraints.gridx = 1;
+            add(updateButton, constraints);
+            updateButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    panelManager.mostrarPanelUpdateUsuario(user);
+                }
+            });
+        }
 
     }
 
