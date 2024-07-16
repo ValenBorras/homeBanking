@@ -76,8 +76,6 @@ public class PanelAdmin extends JPanel {
 
 
         boton = new JButton("Crear usuario");
-        boton.setBackground(Color.BLUE);
-        boton.setForeground(Color.WHITE);
         constraints.gridx = 0;
         constraints.gridy++;
 
@@ -92,8 +90,6 @@ public class PanelAdmin extends JPanel {
 
         //Boton volver
         JButton backButton = new JButton("Volver");
-        boton.setBackground(Color.BLUE);
-        boton.setForeground(Color.WHITE);
         constraints.gridx = 0;
         constraints.gridy++;
         add(backButton, constraints);

@@ -48,16 +48,38 @@ public class PortalUsuario extends JPanel{
         constraints.gridy = 0;
         add(label, constraints);
 
+        button = new JButton("Depositar");
+        constraints.gridx = 0;
+        constraints.gridy++;
+        add(button,constraints);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelManager.mostrarPanelDepositar(user);
+            }
+        });
+
+
+        button = new JButton("Transferir");
+        constraints.gridx = 0;
+        constraints.gridy++;
+        add(button,constraints);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelManager.mostrarPanelTransferir(user);
+            }
+        });
 
         label = new JLabel("Cuentas:");
         constraints.gridx = 0;
-        constraints.gridy = 1;
+        constraints.gridy++;
         add(label, constraints);
 
         if(cuentas.isEmpty()){
             label = new JLabel("El usuario no tiene cuentas");
             constraints.gridx = 0;
-            constraints.gridy = 2;
+            constraints.gridy++;
             add(label, constraints);
         }
 

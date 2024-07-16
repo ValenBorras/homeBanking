@@ -56,12 +56,42 @@ public class CuentaService {
         }
     }
 
+    public Cuenta readFromAlias(String alias)throws ServiceException{
+
+        try {
+            return cuentaDAO.readFromAlias(alias);
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new ServiceException("UsuarioService.Read: " + e.getMessage());
+        }
+    }
+
     public List<Cuenta> readAllFromUserID(int id)throws ServiceException{
         try {
             return cuentaDAO.readAllFromUserID(id);
         } catch (DAOException e) {
             e.printStackTrace();
             throw new ServiceException("PersonaService.recuperarTodos: " + e.getMessage());
+        }
+    }
+
+    public void depositar(Cuenta cuenta, double monto) throws ServiceException{
+
+        try {
+            cuentaDAO.depositar(cuenta, monto);
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new ServiceException("CuentaService.Update: " + e.getMessage());
+        }
+    }
+
+    public void debitar(Cuenta cuenta, double monto) throws ServiceException{
+
+        try {
+            cuentaDAO.debitar(cuenta, monto);
+        } catch (DAOException e) {
+            e.printStackTrace();
+            throw new ServiceException("CuentaService.Update: " + e.getMessage());
         }
     }
 }

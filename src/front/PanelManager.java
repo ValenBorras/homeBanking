@@ -15,6 +15,8 @@ public class PanelManager {
     private PanelUpdateCuenta panelUpdateCuenta;
     private PanelUpdateUsuario panelUpdateUsuario;
     private PanelAdmin panelAdmin;
+    private PanelTransferir panelTransferir;
+    private PanelDepositar panelDepositar;
 
     public PanelManager(){}
 
@@ -33,6 +35,8 @@ public class PanelManager {
         panelUpdateCuenta = new PanelUpdateCuenta(this);
         panelUpdateUsuario = new PanelUpdateUsuario(this);
         panelAdmin = new PanelAdmin(this);
+        panelTransferir = new PanelTransferir(this);
+        panelDepositar = new PanelDepositar(this);
 
     }
     public void showFrame() {
@@ -53,7 +57,6 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
-
     public void mostrarPanelCrearUsuario(){
         frame.getContentPane().removeAll();
         frame.getContentPane().add(panelCrearUsuario);
@@ -61,7 +64,6 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
-
     public void mostrarPanelUpdateUsuario(Usuario usuario){
         panelUpdateUsuario.armarPanelUpdateUsuario(usuario);
         frame.getContentPane().removeAll();
@@ -70,7 +72,6 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
-
     public void mostrarPortalUsuario(int id, boolean admin){
         portalUsuario.armarPortalUsuario(id,admin);
         frame.getContentPane().removeAll();
@@ -79,7 +80,6 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
-
     public void mostrarPanelCrearCuenta(int id){
         panelCrearCuenta.armarPanelCrearCuenta(id);
         frame.getContentPane().removeAll();
@@ -88,7 +88,6 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
-
     public void mostrarPanelUpdateCuenta(Cuenta cuenta){
         panelUpdateCuenta.armarPanelUpdateCuenta(cuenta);
         frame.getContentPane().removeAll();
@@ -97,7 +96,6 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
-
     public void mostrarPanelAdmin(){
         panelAdmin.armarPanelAdmin();
         frame.getContentPane().removeAll();
@@ -106,6 +104,24 @@ public class PanelManager {
         frame.pack();
         frame.getContentPane().repaint();
     }
+    public void mostrarPanelTransferir(Usuario usuario){
+        panelTransferir.armarPanelTransferir(usuario);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelTransferir);
+        frame.getContentPane().validate();
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+    public void mostrarPanelDepositar(Usuario usuario){
+        panelDepositar.armarPanelDepositar(usuario);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelDepositar);
+        frame.getContentPane().validate();
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+
+
 
     public JFrame getFrame() {
         return frame;

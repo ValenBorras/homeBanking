@@ -98,18 +98,13 @@ public class UsuarioDAO implements IUsuarioDAO {
 
     @Override
     public List<Usuario> readAll() throws DAOException {
-        List<Usuario> personas = new ArrayList<Usuario>();
+        List<Usuario> usuarios = new ArrayList<Usuario>();
 
         try {
             Class.forName("org.h2.Driver");
             Connection con2 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement2 = con2.createStatement();
             ResultSet resultSet = statement2.executeQuery("SELECT * FROM USUARIO");
-            int id = 0;
-            String nombre = "";
-            String email = "";
-            String password = "";
-            Boolean admin = false;
 
             while(resultSet.next())
             {
@@ -120,7 +115,7 @@ public class UsuarioDAO implements IUsuarioDAO {
                 usuario.setPassword(resultSet.getString("PASSWORD"));
                 usuario.setAdmin(resultSet.getBoolean("ADMIN"));
 
-                personas.add(usuario);
+                usuarios.add(usuario);
             }
             con2.close();
         } catch (SQLException e) {
@@ -131,7 +126,7 @@ public class UsuarioDAO implements IUsuarioDAO {
             throw new DAOException("UsuarioDAO.RecuperarTodos: " + e.getMessage());
         }
 
-        return personas;
+        return usuarios;
     }
     }
 

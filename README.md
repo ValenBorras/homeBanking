@@ -34,7 +34,16 @@ CREATE TABLE CUENTA (
     alias VARCHAR(50) UNIQUE NOT NULL,
     balance DECIMAL(10, 2) DEFAULT 0.00,
     tipo VARCHAR(50) NOT NULL,
-    FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+);
+CREATE TABLE TRANSFER (
+    idTransfer INT AUTO_INCREMENT PRIMARY KEY,
+    aliasDesde VARCHAR(50) NOT NULL,
+    aliasHasta VARCHAR(50) NOT NULL,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    monto DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (aliasDesde) REFERENCES CUENTA(alias),
+    FOREIGN KEY (aliasHasta) REFERENCES CUENTA(alias)
 );
 (Agregar las demas cuando esten)...
 
