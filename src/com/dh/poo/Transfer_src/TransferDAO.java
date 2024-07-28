@@ -61,16 +61,17 @@ public class TransferDAO implements ITransferDAO {
     @Override
     public List<Transfer> allTransfersFromUser(int userID) throws DAOException {
         List<Transfer> transfers = new ArrayList<Transfer>();
+        Connection con2 = null;
 
         try {
             Class.forName("org.h2.Driver");
-            Connection con2 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
+            con2 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement2 = con2.createStatement();
-            ResultSet resultSet = statement2.executeQuery(" SELECT t.idTransfer, t.aliasDesde, t.aliasHasta, t.fecha, t.monto" +
-                    "FROM TRANSFER t" +
-                    "JOIN CUENTA aliasDesde ON t.aliasDesde = aliasDesde.idCuenta" +
-                    "JOIN CUENTA aliasHasta ON t.aliasHasta = aliasHasta.idCuenta" +
-                    "WHERE aliasDesde.idUsuario ="+ userID + " OR aliasHasta.idUsuario ="+userID);
+            ResultSet resultSet = statement2.executeQuery(" SELECT t.idTransfer, t.aliasDesde, t.aliasHasta, t.fecha, t.monto " +
+                    "FROM TRANSFERS t " +
+                    "JOIN CUENTA cDesde ON t.aliasDesde = cDesde.alias " +
+                    "JOIN CUENTA cHasta ON t.aliasHasta = cHasta.alias " +
+                    "WHERE cDesde.idUsuario ="+ userID + " OR cHasta.idUsuario ="+userID);
 
             while(resultSet.next())
             {
@@ -83,13 +84,22 @@ public class TransferDAO implements ITransferDAO {
 
                 transfers.add(transfer);
             }
-            con2.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
+
             throw new DAOException("TransferDAO.RecuperarTodos: " + e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+
             throw new DAOException("TransferDAO.RecuperarTodos: " + e.getMessage());
+        } finally {
+
+            try {
+                con2.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return transfers;

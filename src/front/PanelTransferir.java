@@ -83,12 +83,14 @@ public class PanelTransferir extends JPanel{
         JButton backButton = new JButton("Cancelar");
         constraints.gridx = 0;
         constraints.gridy = 3;
+        backButton.setForeground(Color.red);
         add(backButton, constraints);
 
         //Boton Confirmar
         JButton submitButton = new JButton("Confirmar");
         constraints.gridx = 1;
         constraints.gridy = 3;
+        submitButton.setForeground(Color.green);
         constraints.gridwidth = 1;
         constraints.fill = GridBagConstraints.NONE;
         add(submitButton, constraints);

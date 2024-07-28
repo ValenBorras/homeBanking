@@ -1,6 +1,10 @@
 package front;
 
 import com.dh.poo.ServiceException;
+import com.dh.poo.TarjetaCredito_src.TarjetaCredito;
+import com.dh.poo.TarjetaCredito_src.TarjetaCreditoService;
+import com.dh.poo.TarjetaDebito_src.TarjetaDebito;
+import com.dh.poo.TarjetaDebito_src.TarjetaDebitoService;
 import com.dh.poo.User_src.Usuario;
 import com.dh.poo.User_src.UsuarioService;
 
@@ -26,12 +30,13 @@ public class PanelUsers extends JPanel {
 
     public void armarPanelUsers(){
         UsuarioService userService = new UsuarioService();
+        TarjetaDebitoService tarjetaDS = new TarjetaDebitoService();
+        TarjetaCreditoService tarjetaCs = new TarjetaCreditoService();
         this.removeAll();
 
         this.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
-        constraints.insets = new Insets(5, 5, 5, 5);
-
+        constraints.insets = new Insets(5, 15, 5, 15);
 
         try{
             users = userService.readAll();

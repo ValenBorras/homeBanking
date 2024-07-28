@@ -57,6 +57,7 @@ public class PanelCrearUsuario extends JPanel{
         JButton backButton = new JButton("Volver");
         constraints.gridx = 0;
         constraints.gridy = 4;
+        backButton.setForeground(Color.blue);
         add(backButton, constraints);
 
         //Boton Confirmar
@@ -64,6 +65,7 @@ public class PanelCrearUsuario extends JPanel{
         constraints.gridx = 1;
         constraints.gridy = 4;
         constraints.gridwidth = 1;
+        submitButton.setForeground(Color.green);
         constraints.fill = GridBagConstraints.NONE;
         add(submitButton, constraints);
 

@@ -1,38 +1,35 @@
-package com.dh.poo.TarjetaCredito_src;
+package com.dh.poo.TarjetaDebito_src;
 
 import com.dh.poo.DAOException;
-import com.dh.poo.TarjetaCredito_src.TarjetaCredito;
+import com.dh.poo.TarjetaDebito_src.TarjetaDebito;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TarjetaCreditoDAO implements ITarjetaCreditoDAO{
-    public void create(TarjetaCredito tarjeta) throws DAOException {
+public class TarjetaDebitoDAO implements ITarjetaDebitoDAO {
+    @Override
+    public void create(TarjetaDebito tarjeta) throws DAOException {
         //INSERT INTO
         try {
             Class.forName("org.h2.Driver");
             Connection connection = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement = connection.createStatement();
 
-            LocalDate fechaCierre = LocalDate.now().withDayOfMonth(27);
-            LocalDate fechaVencimiento = fechaCierre.plusDays(7);
+            LocalDate fechaVencimiento = LocalDate.now().plusYears(5);
 
-            System.out.println(fechaCierre);
-            System.out.println(fechaVencimiento);
-
-            int cantRegistros = statement.executeUpdate("INSERT INTO TARJETA_CREDITO (IDUSUARIO,FECHAVENCIMIENTO,DISPONIBLE, APAGAR, FECHACIERRE) VALUES(" +" '" + tarjeta.getIdUsuario() + "','" + fechaVencimiento + "','" + tarjeta.getDisponible() + "','" + 0 + "','" + fechaCierre + "')");
+            int cantRegistros = statement.executeUpdate("INSERT INTO TARJETA_DEBITO (IDCUENTA, IDUSUARIO, FECHAVENCIMIENTO) VALUES(" +" '" + tarjeta.getIdCuenta() + "','" + tarjeta.getIdUsuario() + "','" + fechaVencimiento + "')");
 
             if(cantRegistros > 0)
                 System.out.println("Se guardo un nuevo tarjeta");
             connection.close();
         } catch (ClassNotFoundException e){
             e.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.Create: " + e.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Create: " + e.getMessage());
         } catch (SQLException throwables){
             throwables.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.Create: " + throwables.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Create: " + throwables.getMessage());
 
         }
     }
@@ -43,47 +40,47 @@ public class TarjetaCreditoDAO implements ITarjetaCreditoDAO{
             Class.forName("org.h2.Driver");
             Connection con4 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement4 = con4.createStatement();
-            int cantRegistrosEliminados = statement4.executeUpdate("DELETE FROM TARJETA_CREDITO WHERE IDTARJETA=" + id);
+            int cantRegistrosEliminados = statement4.executeUpdate("DELETE FROM TARJETA_DEBITO WHERE IDTARJETA=" + id);
             if(cantRegistrosEliminados > 0)
                 System.out.println("Se ha eliminado el registro");
             con4.close();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.Eliminar: " + e.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Eliminar: " + e.getMessage());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.Eliminar: " + throwables.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Eliminar: " + throwables.getMessage());
         }
     }
 
     @Override
-    public void update(TarjetaCredito tarjeta) throws DAOException {
+    public void update(TarjetaDebito tarjeta) throws DAOException {
         try {
             Class.forName("org.h2.Driver");
             Connection con3 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement3 = con3.createStatement();
-            int cantRegistros2 = statement3.executeUpdate("UPDATE TARJETA_CREDITO SET FECHAVENCIMIENTO = '" + tarjeta.getFechaVencimiento() + "', DISPONIBLE = '" + tarjeta.getDisponible() + "',APAGAR = '" + tarjeta.getaPagar() + "' WHERE IDTARJETA=" + tarjeta.getTarjetaID());
+            int cantRegistros2 = statement3.executeUpdate("UPDATE TARJETA_DEBITO SET FECHAVENCIMIENTO = '" + tarjeta.getFechaVencimiento() + "' WHERE IDTARJETA=" + tarjeta.getTarjetaID());
             if(cantRegistros2 > 0)
                 System.out.println("Se modificó el tarjeta");
 
             con3.close();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.Modificar: " + e.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Modificar: " + e.getMessage());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.Modificar: " + throwables.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Modificar: " + throwables.getMessage());
         }
     }
 
     @Override
-    public TarjetaCredito read(int id) throws DAOException {
-        TarjetaCredito tarjeta = new TarjetaCredito();
+    public TarjetaDebito read(int id) throws DAOException {
+        TarjetaDebito tarjeta = new TarjetaDebito();
         try {
             Class.forName("org.h2.Driver");
             Connection con5 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement5 = con5.createStatement();
-            ResultSet resultSet2 = statement5.executeQuery("SELECT * FROM TARJETA_CREDITO WHERE IDTARJETA=" + id);
+            ResultSet resultSet2 = statement5.executeQuery("SELECT * FROM TARJETA_DEBITO WHERE IDTARJETA=" + id);
 
 
             while(resultSet2.next()) {
@@ -91,56 +88,52 @@ public class TarjetaCreditoDAO implements ITarjetaCreditoDAO{
                 tarjeta.setCvv(resultSet2.getInt("CVV"));
                 tarjeta.setNumeroTarjeta(resultSet2.getLong("NUMEROTARJETA"));
                 tarjeta.setFechaVencimiento(resultSet2.getDate("FECHAVENCIMIENTO").toLocalDate());
+                tarjeta.setIdCuenta(resultSet2.getInt("IDCUENTA"));
                 tarjeta.setIdUsuario(resultSet2.getInt("IDUSUARIO"));
-                tarjeta.setFechaCierre(resultSet2.getDate("FECHACIERRE").toLocalDate());
-                tarjeta.setDisponible(resultSet2.getInt("DISPONIBLE"));
-                tarjeta.setaPagar(resultSet2.getInt("APAGAR"));
             }
             con5.close();
 
 
         } catch (ClassNotFoundException e) {
-            throw new DAOException("TarjetaCreditoDAO.Recuperar: " + e.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.Recuperar: " + e.getMessage());
         } catch (SQLException throwables) {
-            throw new DAOException("TarjetaCredito.Recuperar: " + throwables.getMessage());
+            throw new DAOException("TarjetaDebito.Recuperar: " + throwables.getMessage());
         }
 
         return tarjeta;
     }
 
     @Override
-    public List<TarjetaCredito> readAllFromUser(int idUsuario) throws DAOException {
-        List<TarjetaCredito> tarjetas = new ArrayList<TarjetaCredito>();
+    public List<TarjetaDebito> readAllFromUser(int idUsuario) throws DAOException {
+        List<TarjetaDebito> tarjetas = new ArrayList<TarjetaDebito>();
 
         try {
             Class.forName("org.h2.Driver");
             Connection con2 = DriverManager.getConnection("jdbc:h2:/Users/valentinaborras/Desktop/Lic.EnIA/LabI(java)/DB", "valen", "123");
             Statement statement2 = con2.createStatement();
-            ResultSet resultSet = statement2.executeQuery("SELECT * FROM TARJETA_CREDITO WHERE IDUSUARIO =" + idUsuario);
+            ResultSet resultSet = statement2.executeQuery("SELECT * FROM TARJETA_DEBITO WHERE IDUSUARIO =" + idUsuario);
 
             while(resultSet.next())
             {
-                TarjetaCredito tarjeta = new TarjetaCredito();
+                TarjetaDebito tarjeta = new TarjetaDebito();
                 tarjeta.setTarjetaID(resultSet.getInt("IDTARJETA"));
                 tarjeta.setCvv(resultSet.getInt("CVV"));
                 tarjeta.setNumeroTarjeta(resultSet.getLong("NUMEROTARJETA"));
                 tarjeta.setFechaVencimiento(resultSet.getDate("FECHAVENCIMIENTO").toLocalDate());
+                tarjeta.setIdCuenta(resultSet.getInt("IDCUENTA"));
                 tarjeta.setIdUsuario(resultSet.getInt("IDUSUARIO"));
-                tarjeta.setFechaCierre(resultSet.getDate("FECHACIERRE").toLocalDate());
-                tarjeta.setDisponible(resultSet.getInt("DISPONIBLE"));
-                tarjeta.setaPagar(resultSet.getInt("APAGAR"));
 
-                System.out.println("agrego credito");
+                System.out.println("agrego debito");
 
                 tarjetas.add(tarjeta);
             }
             con2.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.RecuperarTodos: " + e.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.RecuperarTodos: " + e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            throw new DAOException("TarjetaCreditoDAO.RecuperarTodos: " + e.getMessage());
+            throw new DAOException("TarjetaDebitoDAO.RecuperarTodos: " + e.getMessage());
         }
 
         return tarjetas;

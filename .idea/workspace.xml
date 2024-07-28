@@ -4,30 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="Agrego funcionalidad admin">
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/ITarjetaCreditoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCredito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCreditoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCreditoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/ITarjetaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/Tarjeta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/TarjetaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/TarjetaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Transfer_src/ITransferDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Transfer_src/TransferDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Transfer_src/TransferService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelDepositar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/front/PanelTransferir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d47dbb93-a000-4da0-b603-d4440dc8dca1" name="Changes" comment="AÑADO TRANSFERENCIAS(Funciona)">
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/MovimientoTarjeta_src/IMovimientoTarjetaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/MovimientoTarjeta_src/MovimientoTarjeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/MovimientoTarjeta_src/MovimientoTarjetaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/MovimientoTarjeta_src/MovimientoTarjetaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaDebito_src/ITarjetaDebitoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaDebito_src/TarjetaDebito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaDebito_src/TarjetaDebitoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaDebito_src/TarjetaDebitoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelCrearTarjeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelCrearTarjetaDebito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelCuentas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelPagarConTarjeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelReporteMes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelResumenMovimientos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/front/PanelTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/CuentaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/ICuentaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Cuenta_src/ICuentaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Transferencia_src/Transferencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Transfer_src/Transfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/User_src/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/ITarjetaCreditoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/ITarjetaCreditoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCredito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCreditoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCreditoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCreditoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/TarjetaCredito_src/TarjetaCreditoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/ITarjetaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/Tarjeta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/TarjetaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Tarjeta_src/TarjetaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dh/poo/Transfer_src/TransferDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dh/poo/Transfer_src/TransferDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PanelAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelCrearCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelCrearCuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelCrearUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelDepositar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelDepositar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PanelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelTransferir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelTransferir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelUpdateCuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUpdateCuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelUpdateUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUpdateUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/front/PanelUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PanelUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/front/PortalUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/front/PortalUsuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +133,10 @@
       <workItem from="1720456950753" duration="20380000" />
       <workItem from="1720796358760" duration="5276000" />
       <workItem from="1720916491518" duration="1199000" />
+      <workItem from="1721093178526" duration="19144000" />
+      <workItem from="1721307879164" duration="10281000" />
+      <workItem from="1721393907822" duration="27633000" />
+      <workItem from="1721861488370" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -169,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720458222318</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="AÑADO TRANSFERENCIAS(Funciona)">
+      <option name="closed" value="true" />
+      <created>1721093420688</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721093420688</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +218,8 @@
     <MESSAGE value="DAO Cuentas listo!! Funciona bien, falta que arme denuevo cuando elimino una cuenta" />
     <MESSAGE value="CRUD USUARIOS Y CUENTAS COMPLETO Y FUNCIONAL" />
     <MESSAGE value="Agrego funcionalidad admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agrego funcionalidad admin" />
+    <MESSAGE value="AÑADO TRANSFERENCIAS(Funciona)" />
+    <option name="LAST_COMMIT_MESSAGE" value="AÑADO TRANSFERENCIAS(Funciona)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

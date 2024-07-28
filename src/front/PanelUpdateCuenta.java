@@ -63,6 +63,7 @@ public class PanelUpdateCuenta extends JPanel{
         JButton backButton = new JButton("Cancelar");
         constraints.gridx = 0;
         constraints.gridy = 4;
+        backButton.setForeground(Color.red);
         add(backButton, constraints);
 
         //Boton Confirmar
@@ -70,6 +71,7 @@ public class PanelUpdateCuenta extends JPanel{
         constraints.gridx = 1;
         constraints.gridy = 4;
         constraints.gridwidth = 1;
+        submitButton.setForeground(Color.green);
         constraints.fill = GridBagConstraints.NONE;
         add(submitButton, constraints);
 

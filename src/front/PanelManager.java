@@ -3,7 +3,10 @@ package front;
 import javax.swing.*;
 
 import com.dh.poo.Cuenta_src.Cuenta;
+import com.dh.poo.Tarjeta;
 import com.dh.poo.User_src.Usuario;
+
+import java.awt.*;
 import java.util.List;
 
 public class PanelManager {
@@ -17,6 +20,13 @@ public class PanelManager {
     private PanelAdmin panelAdmin;
     private PanelTransferir panelTransferir;
     private PanelDepositar panelDepositar;
+    private PanelTarjetas panelTarjetas;
+    private PanelCuentas panelCuentas;
+    private PanelCrearTarjeta panelCrearTarjeta;
+    private PanelCrearTarjetaDebito panelCrearTarjetaDebito;
+    private PanelPagarConTarjeta panelPagarConTarjeta;
+    private PanelResumenMovimientos panelResumenMovimientos;
+    private PanelReporteMes panelReporteMes;
 
     public PanelManager(){}
 
@@ -26,10 +36,8 @@ public class PanelManager {
         //frame.setBounds(100,100,500,500);
 
         panelUsers = new PanelUsers(this);
-
         panelCrearUsuario = new PanelCrearUsuario(this);
         panelCrearUsuario.armarPanelCrearUsuario();
-
         portalUsuario = new PortalUsuario(this);
         panelCrearCuenta = new PanelCrearCuenta(this);
         panelUpdateCuenta = new PanelUpdateCuenta(this);
@@ -37,10 +45,19 @@ public class PanelManager {
         panelAdmin = new PanelAdmin(this);
         panelTransferir = new PanelTransferir(this);
         panelDepositar = new PanelDepositar(this);
+        panelTarjetas = new PanelTarjetas(this);
+        panelCuentas = new PanelCuentas(this);
+        panelCrearTarjeta = new PanelCrearTarjeta(this);
+        panelCrearTarjetaDebito = new PanelCrearTarjetaDebito(this);
+        panelPagarConTarjeta = new PanelPagarConTarjeta(this);
+        panelResumenMovimientos = new PanelResumenMovimientos(this);
+        panelReporteMes = new PanelReporteMes(this);
 
     }
     public void showFrame() {
-        frame.setVisible(true); frame.pack(); ;
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
     public void mostrarSalir() {
         int response = JOptionPane.showConfirmDialog(frame,"Esta seguro?");
@@ -121,6 +138,77 @@ public class PanelManager {
         frame.getContentPane().repaint();
     }
 
+    public void mostrarPanelTarjetas(Usuario usuario, Boolean admin){
+        panelTarjetas.armarPanelTarjetas(usuario, admin);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelTarjetas);
+        frame.getContentPane().validate();
+        JScrollPane scrollPane = new JScrollPane(panelTarjetas, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        frame.add(scrollPane);
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+
+    public void mostrarPanelCuentas(Usuario usuario, Boolean admin){
+        panelCuentas.armarPanelCuentas(usuario, admin);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelCuentas);
+        frame.getContentPane().validate();
+        JScrollPane scrollPane = new JScrollPane(panelCuentas, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new Dimension(400, 500));
+        frame.add(scrollPane);
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+    public void mostrarPanelCrearTarjeta(Usuario usuario){
+        panelCrearTarjeta.armarPanelCrearTarjeta(usuario);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelCrearTarjeta);
+        frame.getContentPane().validate();
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+    public void mostrarPanelCrearTarjetaDebito(Usuario usuario){
+        panelCrearTarjetaDebito.armarPanelCrearTarjetaDebito(usuario);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelCrearTarjetaDebito);
+        frame.getContentPane().validate();
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+
+    public void mostrarPanelPagarConTarjeta(Usuario usuario){
+        panelPagarConTarjeta.armarPanelPagarConTarjeta(usuario);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelPagarConTarjeta);
+        frame.getContentPane().validate();
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+
+    public void mostrarPanelResumenMovimientos(Usuario usuario, Boolean admin){
+        panelResumenMovimientos.armarPanelResumenMovimientos(usuario, admin);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelResumenMovimientos);
+        frame.getContentPane().validate();
+        JScrollPane scrollPane = new JScrollPane(panelResumenMovimientos, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new Dimension(400, 500));
+        frame.add(scrollPane);
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
+
+    public void mostrarPanelReporteMes(Tarjeta tarjeta, int mes, Usuario usuario, Boolean admin){
+        panelReporteMes.armarPanelReporteMes(tarjeta, mes, usuario, admin);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelReporteMes);
+        frame.getContentPane().validate();
+        JScrollPane scrollPane = new JScrollPane(panelReporteMes, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new Dimension(400, 500));
+        frame.add(scrollPane);
+        frame.pack();
+        frame.getContentPane().repaint();
+    }
 
 
     public JFrame getFrame() {

@@ -7,6 +7,7 @@ import com.dh.poo.User_src.UsuarioService;
 import com.dh.poo.User_src.Usuario;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -41,7 +42,7 @@ public class PortalUsuario extends JPanel{
         this.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.WEST;
-        constraints.insets = new Insets(5, 5, 5, 5);
+        constraints.insets = new Insets(5, 20, 5, 20);
 
         label = new JLabel("<html><b> Portal de " + user.getNombre() + "</b></html>");
         constraints.gridx = 0;
@@ -71,123 +72,47 @@ public class PortalUsuario extends JPanel{
             }
         });
 
-        label = new JLabel("Cuentas:");
+        button = new JButton("Tarjetas");
         constraints.gridx = 0;
         constraints.gridy++;
-        add(label, constraints);
-
-        if(cuentas.isEmpty()){
-            label = new JLabel("El usuario no tiene cuentas");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(label, constraints);
-        }
-
-        for(Cuenta cuenta:cuentas){
-            label = new JLabel("<html><b> CBU:</b></html>");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(label,constraints);
-
-            label = new JLabel(String.valueOf(cuenta.getCbu()));
-            constraints.gridx = 1;
-            add(label,constraints);
-
-            label = new JLabel("<html><b> Alias:</b></html>");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(label,constraints);
-
-            label = new JLabel(cuenta.getAlias());
-            constraints.gridx = 1;
-            add(label,constraints);
-
-            label = new JLabel("<html><b> Balance:</b></html>");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(label,constraints);
-
-            label = new JLabel(String.valueOf(cuenta.getBalance()));
-            constraints.gridx = 1;
-            add(label,constraints);
-
-            label = new JLabel("<html><b> Tipo:</b></html>");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(label,constraints);
-
-            label = new JLabel(cuenta.getTipo());
-            constraints.gridx = 1;
-            add(label,constraints);
-
-            if(admin){
-                //Eliminar Cuenta
-                button = new JButton("Eliminar Cuenta");
-                constraints.gridx = 0;
-                constraints.gridy++;
-                add(button, constraints);
-                button.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        try{
-                            cuentaService.delete(cuenta.getIdCuenta());
-
-                        }catch(ServiceException er){
-                            er.printStackTrace();
-                        }
-                        panelManager.mostrarPanelUsers();
-                    }
-                });
-                //Editar Cuenta
-                button = new JButton("Editar Cuenta");
-                constraints.gridx = 1;
-                add(button, constraints);
-                button.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        panelManager.mostrarPanelUpdateCuenta(cuenta);
-                    }
-
-                });
-
-            }
-            label = new JLabel("------------");
-            constraints.gridx = 0;
-            constraints.gridy++;
-            add(label,constraints);
-        }
-
-
-
-        //Boton volver
-        JButton backButton = new JButton("Volver");
-        constraints.gridx = 0;
-        constraints.gridy++;
-        add(backButton, constraints);
-
-        backButton.addActionListener(new ActionListener() {
+        add(button,constraints);
+        button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panelManager.mostrarPanelUsers();
+                panelManager.mostrarPanelTarjetas(user, admin);
+            }
+        });
+
+        button = new JButton("Cuentas");
+        constraints.gridx = 0;
+        constraints.gridy++;
+        add(button,constraints);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelManager.mostrarPanelCuentas(user, admin);
+
+            }
+        });
+
+        JButton mostrarResumenUsuario = new JButton("Ver resumen");
+        constraints.gridx = 0;
+        constraints.gridy++;
+        add(mostrarResumenUsuario, constraints);
+
+        mostrarResumenUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelManager.mostrarPanelResumenMovimientos(user, admin);
             }
         });
 
         if(admin){
-            //Boton crearCuenta
-            JButton botonCrearCuenta = new JButton("Crear Cuenta");
-            constraints.gridx = 1;
-            add(botonCrearCuenta, constraints);
-
-            botonCrearCuenta.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    panelManager.mostrarPanelCrearCuenta(user.getIdUsuario());
-                }
-            });
-
+            //Boton eliminar Usuario
             JButton deleteButton = new JButton("Eliminar usuario");
             constraints.gridx = 0;
             constraints.gridy++;
+            deleteButton.setForeground(Color.red);
             add(deleteButton, constraints);
 
             deleteButton.addActionListener(new ActionListener() {
@@ -202,8 +127,11 @@ public class PortalUsuario extends JPanel{
                 }
             });
 
+            //Boton editar usuario
             JButton updateButton = new JButton("Editar Usuario");
-            constraints.gridx = 1;
+            constraints.gridx = 0;
+            constraints.gridy++;
+            updateButton.setForeground(Color.blue);
             add(updateButton, constraints);
             updateButton.addActionListener(new ActionListener() {
                 @Override
@@ -211,7 +139,23 @@ public class PortalUsuario extends JPanel{
                     panelManager.mostrarPanelUpdateUsuario(user);
                 }
             });
+
+
         }
+        //Boton volver
+        JButton backButton = new JButton("Volver");
+        constraints.gridx = 0;
+        constraints.gridy++;
+        backButton.setForeground(Color.blue);
+
+        add(backButton, constraints);
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelManager.mostrarPanelUsers();
+            }
+        });
 
     }
 

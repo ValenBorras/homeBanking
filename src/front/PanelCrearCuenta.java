@@ -61,12 +61,14 @@ public class PanelCrearCuenta extends JPanel{
         constraints.gridx = 0;
         constraints.gridy = 4;
         add(backButton, constraints);
+        backButton.setForeground(Color.blue);
 
         //Boton Confirmar
         JButton submitButton = new JButton("Confirmar");
         constraints.gridx = 1;
         constraints.gridy = 4;
         constraints.gridwidth = 1;
+        submitButton.setForeground(Color.green);
         constraints.fill = GridBagConstraints.NONE;
         add(submitButton, constraints);
 
